@@ -6,6 +6,9 @@ This is the backend and database for our webtoon-app. The purpose is to have acc
 
 -   Express/Node
 -   mongoose
+-   cors
+-   dotenv
+-   nodemon
 
 ## Setup
 
