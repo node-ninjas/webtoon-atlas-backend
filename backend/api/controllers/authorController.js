@@ -1,9 +1,5 @@
-import express from 'express'
-import mongoose from 'mongoose'
 import { Author } from './../schemas/schema.js'
 import { handleError, handleResponse } from '../../utils/handler.js'
-
-// getSingleAuthor, addSingleAuthor, updateSingleAuthor
 
 export const getSingleAuthor = async (req, res) => {
     try {
