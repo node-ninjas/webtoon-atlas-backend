@@ -2,14 +2,14 @@ import mongoose from 'mongoose'
 
 import { personInfoSubdocument } from './personInfoSubdocument.js'
 
-export const artistSchema = new mongoose.Schema(
+export const publisherSchema = new mongoose.Schema(
     {
         ...personInfoSubdocument.obj,
     },
     {
-        collection: 'artist',
+        collection: 'publisher',
         timestamps: true,
     }
 )
 
-export const Artist = mongoose.model('Artist', artistSchema)
+export const Publisher = mongoose.model('Publisher', publisherSchema)
