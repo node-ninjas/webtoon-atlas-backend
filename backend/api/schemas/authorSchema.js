@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const authorSchema = new mongoose(
+export const authorSchema = new mongoose(
     {
         name: {
             type: String,
