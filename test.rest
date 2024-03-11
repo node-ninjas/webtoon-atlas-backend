@@ -1,5 +1,11 @@
 @url = http://localhost:3550
 
+
+### GET ALL AUTHORS
+GET {{url}}/authors
+
+
+
 ### GET SINGLE AUTHOR
 GET {{url}}/authors/65ef035167c34d6491ccdfab
 
@@ -9,9 +15,9 @@ POST {{url}}/authors
 Content-Type: application/json
 
 {
-    "name": "Thomas Weber",
-    "city": "Hamburg",
-    "description": "He writes fantasy stories"
+    "name": "Alex Hirschblume",
+    "city": "Berlin",
+    "description": "He writes children stories"
 }
 
 ### UPDATE SINGLE AUTHOR
@@ -26,3 +32,5 @@ Content-Type: application/json
 ### DELETE SINGLE AUTHOR
 DELETE {{url}}/authors/65ef035167c34d6491ccdfab
 
+### CLEAR AUTHORS
+DELETE {{url}}/authors
