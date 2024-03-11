@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import { authorRouter } from './backend/api/routers/router.js'
+import { authorRouter } from './backend/api/routers/authorRouter.js'
 
 dotenv.config()
 

@@ -11,10 +11,19 @@ export const getSingleAuthor = async (req, res) => {
     }
 }
 
+export const getAllAuthors = async (req, res) => {
+    try {
+        const author = await Author.find()
+        res.status(201).json(author)
+    } catch (e) {
+        handleError(res, e)
+    }
+}
+
 export const addSingleAuthor = async (req, res) => {
     try {
         const author = await Author.create(req.body)
-        res.status(201).json(author)
+        handleResponse(author, res)
     } catch (e) {
         handleError(res, e)
     }
@@ -35,6 +44,15 @@ export const deleteSingleAuthor = async (req, res) => {
     try {
         const author = await Author.findByIdAndDelete(req.params.id)
         handleResponse(author, res)
+    } catch (e) {
+        handleError(res, e)
+    }
+}
+
+export const deleteAllAuthors = async (req, res) => {
+    try {
+        const author = await Author.deleteMany()
+        res.status(201).json(author)
     } catch (e) {
         handleError(res, e)
     }
