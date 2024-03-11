@@ -21,16 +21,16 @@ Content-Type: application/json
 }
 
 ### UPDATE SINGLE AUTHOR
-PATCH {{url}}/authors/65ef035167c34d6491ccdfab
+PATCH {{url}}/authors/65ef20bfc6e773ea61b1bcce
 Content-Type: application/json
 
 {
-    "name": "Tina Weber",
+    "name": "Alexa Hirschblume",
     "description": "She writes queer stories"
 }
 
 ### DELETE SINGLE AUTHOR
-DELETE {{url}}/authors/65ef035167c34d6491ccdfab
+DELETE {{url}}/authors/65ef20bfc6e773ea61b1bcce
 
 ### CLEAR AUTHORS
 DELETE {{url}}/authors
