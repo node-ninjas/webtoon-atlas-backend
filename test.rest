@@ -1,0 +1,28 @@
+@url = http://localhost:3550
+
+### GET SINGLE AUTHOR
+GET {{url}}/authors/65ef035167c34d6491ccdfab
+
+
+### ADD SINGLE AUTHOR
+POST {{url}}/authors
+Content-Type: application/json
+
+{
+    "name": "Thomas Weber",
+    "city": "Hamburg",
+    "description": "He writes fantasy stories"
+}
+
+### UPDATE SINGLE AUTHOR
+PATCH {{url}}/authors/65ef035167c34d6491ccdfab
+Content-Type: application/json
+
+{
+    "name": "Tina Weber",
+    "description": "She writes queer stories"
+}
+
+### DELETE SINGLE AUTHOR
+DELETE {{url}}/authors/65ef035167c34d6491ccdfab
+

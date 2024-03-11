@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
+import { authorRouter } from './backend/api/routers/router.js'
 
 dotenv.config()
 
@@ -11,6 +12,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+app.use('/authors', authorRouter)
 
 const dbURL = process.env.DB_URL
 
@@ -37,5 +39,5 @@ const startServer = async () => {
 }
 
 startServer()
- 
+
 // Selman ist toll
