@@ -1,11 +1,11 @@
+import express from 'express'
 import { Author } from './../schemas/authorSchema.js'
 import { handleError, handleResponse } from '../../utils/handler.js'
 
 export const getSingleAuthor = async (req, res) => {
     try {
         const author = await Author.findById(req.params.id)
-        author
-        handleResponse(author, res)
+        handleResponse(res, req, author)
     } catch (e) {
         handleError(res, e)
     }
@@ -14,7 +14,7 @@ export const getSingleAuthor = async (req, res) => {
 export const getAllAuthors = async (req, res) => {
     try {
         const author = await Author.find()
-        res.status(201).json(author)
+        res.status(200).json(author)
     } catch (e) {
         handleError(res, e)
     }
@@ -23,7 +23,7 @@ export const getAllAuthors = async (req, res) => {
 export const addSingleAuthor = async (req, res) => {
     try {
         const author = await Author.create(req.body)
-        handleResponse(author, res)
+        res.status(201).json(author)
     } catch (e) {
         handleError(res, e)
     }
@@ -34,7 +34,7 @@ export const updateSingleAuthor = async (req, res) => {
         const author = await Author.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
         })
-        handleResponse(author, res)
+        handleResponse(res, req, author)
     } catch (e) {
         handleError(res, e)
     }
@@ -43,7 +43,7 @@ export const updateSingleAuthor = async (req, res) => {
 export const deleteSingleAuthor = async (req, res) => {
     try {
         const author = await Author.findByIdAndDelete(req.params.id)
-        handleResponse(author, res)
+        handleResponse(res, req, author)
     } catch (e) {
         handleError(res, e)
     }
