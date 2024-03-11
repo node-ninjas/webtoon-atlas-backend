@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-export const authorSchema = new mongoose(
+export const authorSchema = new mongoose.Schema(
     {
         name: {
             type: String,
@@ -20,4 +20,4 @@ export const authorSchema = new mongoose(
     }
 )
 
-export const Author = new model('Author', authorSchema)
+export const Author = new mongoose.model('Author', authorSchema)
