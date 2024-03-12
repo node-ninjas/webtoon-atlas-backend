@@ -2,15 +2,11 @@ import mongoose from 'mongoose'
 
 export const volumesSchema = new mongoose.Schema(
     {
-        title: [
-            {
-                edition_id: {
-                    type: mongoose.Schema.Types.ObjectId,
-                    ref: 'Edition',
-                    required: true,
-                },
-            },
-        ],
+        title: {
+            type: String,
+            required: true,
+        },
+
         volume: {
             type: Number,
             required: true,
