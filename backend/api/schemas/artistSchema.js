@@ -1,21 +1,12 @@
 import mongoose from 'mongoose'
-
-import { personInfoSubdocument } from './personInfoSubdocument.js'
+import { personInfoSubdocument } from './subDocuments/personInfoSubdocument.js'
 
 export const artistSchema = new mongoose.Schema(
     {
         ...personInfoSubdocument.obj,
-        edition: [
-            {
-                edition_id: {
-                    type: mongoose.Schema.Types.ObjectId,
-                    ref: 'Edition',
-                },
-            },
-        ],
     },
     {
-        collection: 'artist',
+        collection: 'artists',
         timestamps: true,
     }
 )

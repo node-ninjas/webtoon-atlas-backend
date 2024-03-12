@@ -8,7 +8,7 @@ import {
     deleteAllArtists,
 } from '../controllers/artistController.js'
 
-const artistRouter = express.Router()
+export const artistRouter = express.Router()
 
 artistRouter
     .route('/')

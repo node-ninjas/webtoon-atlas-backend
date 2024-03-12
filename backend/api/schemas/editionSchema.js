@@ -5,7 +5,7 @@ export const editionSchema = new mongoose.Schema(
         title: { type: String },
     },
     {
-        collection: 'editon',
+        collection: 'edition',
     }
 )
 

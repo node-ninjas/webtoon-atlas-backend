@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import { authorRouter } from './backend/api/routers/authorRouter.js'
+import { artistRouter } from './backend/api/routers/artistRouter.js'
 
 dotenv.config()
 
@@ -13,6 +14,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use('/authors', authorRouter)
+app.use('/artists', artistRouter)
 
 const dbURL = process.env.DB_URL
 
