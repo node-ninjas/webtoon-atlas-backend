@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-import { personInfoSubdocument } from './personInfoSubdocument.js'
+import { personInfoSubdocument } from './subDocuments/personInfoSubdocument.js'
 
 export const publisherSchema = new mongoose.Schema(
     {

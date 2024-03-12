@@ -2,7 +2,8 @@ import mongoose from 'mongoose'
 
 export const editionSchema = new mongoose.Schema(
     {
-        title: { type: String },
+        title: { type: String, required: true },
+        author: []
     },
     {
         collection: 'edition',
