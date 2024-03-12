@@ -11,7 +11,7 @@ export const publisherSchema = new mongoose.Schema(
         },
     },
     {
-        collection: 'publisher',
+        collection: 'publishers',
         timestamps: true,
     }
 )
