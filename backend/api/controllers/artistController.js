@@ -1,6 +1,10 @@
 import express from 'express'
 import { Artist } from './../schemas/artistSchema.js'
-import { handleError, handleResponse } from '../../utils/handler.js'
+import {
+    handleError,
+    handleResponse,
+    handleGetAllResponse,
+} from '../../utils/handler.js'
 
 export const getSingleArtist = async (req, res) => {
     try {
@@ -14,7 +18,7 @@ export const getSingleArtist = async (req, res) => {
 export const getAllArtists = async (req, res) => {
     try {
         const artist = await Artist.find()
-        res.status(200).json(artist)
+        handleGetAllResponse(res, artist)
     } catch (e) {
         handleError(res, e)
     }

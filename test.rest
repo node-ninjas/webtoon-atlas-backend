@@ -46,7 +46,7 @@ GET {{url}}/artists
 
 
 ### GET SINGLE ARTISTS
-GET {{url}}/artists/id
+GET {{url}}/artists/65f034fd442fcd59fce48b8e
 
 
 ### ADD SINGLE ARTISTS
@@ -56,21 +56,21 @@ Content-Type: application/json
 {
     "name": "Hasan AlSaid",
     "city": "Berlin",
-    "description": "He writes queer stories",
-    "edition": [{"edition_id": "65ef20bfc6e773ea61b1bcce"}]
+    "description": "He writes queer stories"
 }
 
 ### UPDATE SINGLE ARTISTS
-PATCH {{url}}/artists/65ef20bfc6e773ea61b1bcce
+PATCH {{url}}/artists/65f034fd442fcd59fce48b8e
 Content-Type: application/json
 
 {
-    "name": "Alexa Hirschblume",
-    "description": "She writes queer stories"
+    "name": "Hasan AlSaid",
+    "city": "Berlin",
+    "description": "He writes queer stories"
 }
 
 ### DELETE SINGLE ARTISTS
-DELETE {{url}}/artists/65ef20bfc6e773ea61b1bcce
+DELETE {{url}}/artists/65f034fd442fcd59fce48b8e
 
 ### CLEAR ARTISTS
 DELETE {{url}}/artists
