@@ -1,12 +1,12 @@
 import express from 'express'
-import { Author as Publisher } from './../schemas/publisherSchema.js'
+import { Publisher } from './../schemas/publisherSchema.js'
 import {
     handleError,
     handleResponse,
     handleGetAllResponse,
 } from '../../utils/handler.js'
 
-export const getSingleAuthor = async (req, res) => {
+export const getSinglePublisher = async (req, res) => {
     try {
         const publisher = await Publisher.findById(req.params.id)
         handleResponse(res, req, publisher)
@@ -15,52 +15,52 @@ export const getSingleAuthor = async (req, res) => {
     }
 }
 
-export const getAllAuthors = async (req, res) => {
+export const getAllPublishers = async (req, res) => {
     try {
-        const author = await Publisher.find()
-        handleGetAllResponse(res, author)
+        const publisher = await Publisher.find()
+        handleGetAllResponse(res, publisher)
     } catch (e) {
         handleError(res, e)
     }
 }
 
-export const addSingleAuthor = async (req, res) => {
+export const addSinglePublisher = async (req, res) => {
     try {
-        const author = await Publisher.create(req.body)
-        res.status(201).json(author)
+        const publisher = await Publisher.create(req.body)
+        res.status(201).json(publisher)
     } catch (e) {
         handleError(res, e)
     }
 }
 
-export const updateSingleAuthor = async (req, res) => {
+export const updateSinglePublisher = async (req, res) => {
     try {
-        const author = await Publisher.findByIdAndUpdate(
+        const publisher = await Publisher.findByIdAndUpdate(
             req.params.id,
             req.body,
             {
                 new: true,
             }
         )
-        handleResponse(res, req, author)
+        handleResponse(res, req, publisher)
     } catch (e) {
         handleError(res, e)
     }
 }
 
-export const deleteSingleAuthor = async (req, res) => {
+export const deleteSinglePublisher = async (req, res) => {
     try {
-        const author = await Publisher.findByIdAndDelete(req.params.id)
-        handleResponse(res, req, author)
+        const publisher = await Publisher.findByIdAndDelete(req.params.id)
+        handleResponse(res, req, publisher)
     } catch (e) {
         handleError(res, e)
     }
 }
 
-export const deleteAllAuthors = async (req, res) => {
+export const deleteAllPublishers = async (req, res) => {
     try {
-        const author = await Publisher.deleteMany()
-        res.status(201).json(author)
+        const publisher = await Publisher.deleteMany()
+        res.status(201).json(publisher)
     } catch (e) {
         handleError(res, e)
     }

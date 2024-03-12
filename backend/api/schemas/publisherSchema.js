@@ -7,7 +7,7 @@ export const publisherSchema = new mongoose.Schema(
         type: {
             type: String,
             required: true,
-            enum: ['publisher', 'original', 'magazinPublisher'],
+            enum: ['publisher', 'originalPublisher', 'magazinPublisher'],
         },
     },
     {

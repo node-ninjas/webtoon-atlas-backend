@@ -14,19 +14,18 @@ POST {{url}}/publishers
 Content-Type: application/json
 
 {
-    "name": "Hasan AlSaid",
-    "city": "Berlin",
-    "description": "He writes queer stories"
+    "name": "PhoenixBooks",
+    "city": "Seoul",
+    "description": "Sie sind ein Publisher mit Sitz in Seoul, Korea",
+    "type": "publisher"
 }
 
 ### UPDATE SINGLE PUBLISHER
-PATCH {{url}}/publishers/65f034fd442fcd59fce48b8e
+PATCH {{url}}/publishers/65f074af6c3a06aeb104f6ad
 Content-Type: application/json
 
 {
-    "name": "Hasan AlSaid",
-    "city": "Berlin",
-    "description": "He writes queer stories"
+    "type": "originalPublisher"
 }
 
 ### DELETE SINGLE PUBLISHER
