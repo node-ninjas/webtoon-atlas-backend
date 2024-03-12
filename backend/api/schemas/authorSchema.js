@@ -1,18 +1,9 @@
 import mongoose from 'mongoose'
+import { personInfoSubdocument } from './subDocuments/personInfoSubdocument.js'
 
 export const authorSchema = new mongoose.Schema(
     {
-        name: {
-            type: String,
-            required: true,
-        },
-        city: {
-            type: String,
-            required: true,
-        },
-        description: {
-            type: String,
-        },
+        ...personInfoSubdocument.obj,
     },
     {
         collection: 'authors',

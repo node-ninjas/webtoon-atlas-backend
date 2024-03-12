@@ -9,7 +9,7 @@ GET {{url}}/authors
 
 
 ### GET SINGLE AUTHOR
-GET {{url}}/authors/65ef035167c34d6491ccdfab
+GET {{url}}/authors/65f06dd9ede8be930ba172f3
 
 
 ### ADD SINGLE AUTHOR
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ### UPDATE SINGLE AUTHOR
-PATCH {{url}}/authors/65ef20bfc6e773ea61b1bcce
+PATCH {{url}}/authors/65f06dd9ede8be930ba172f3
 Content-Type: application/json
 
 {
