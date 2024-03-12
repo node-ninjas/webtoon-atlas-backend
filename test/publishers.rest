@@ -1,0 +1,36 @@
+@url = http://localhost:3550
+
+### GET ALL PUBLISHER
+GET {{url}}/publishers
+
+
+
+### GET SINGLE PUBLISHER
+GET {{url}}/publishers/65f034fd442fcd59fce48b8e
+
+
+### ADD SINGLE PUBLISHER
+POST {{url}}/publishers
+Content-Type: application/json
+
+{
+    "name": "Hasan AlSaid",
+    "city": "Berlin",
+    "description": "He writes queer stories"
+}
+
+### UPDATE SINGLE PUBLISHER
+PATCH {{url}}/publishers/65f034fd442fcd59fce48b8e
+Content-Type: application/json
+
+{
+    "name": "Hasan AlSaid",
+    "city": "Berlin",
+    "description": "He writes queer stories"
+}
+
+### DELETE SINGLE PUBLISHER
+DELETE {{url}}/publishers/65f034fd442fcd59fce48b8e
+
+### CLEAR PUBLISHER
+DELETE {{url}}/publishers

@@ -1,0 +1,36 @@
+@url = http://localhost:3550
+
+### GET ALL ARTISTS
+GET {{url}}/artists
+
+
+
+### GET SINGLE ARTISTS
+GET {{url}}/artists/65f034fd442fcd59fce48b8e
+
+
+### ADD SINGLE ARTISTS
+POST {{url}}/artists
+Content-Type: application/json
+
+{
+    "name": "Hasan AlSaid",
+    "city": "Berlin",
+    "description": "He writes queer stories"
+}
+
+### UPDATE SINGLE ARTISTS
+PATCH {{url}}/artists/65f034fd442fcd59fce48b8e
+Content-Type: application/json
+
+{
+    "name": "Hasan AlSaid",
+    "city": "Berlin",
+    "description": "He writes queer stories"
+}
+
+### DELETE SINGLE ARTISTS
+DELETE {{url}}/artists/65f034fd442fcd59fce48b8e
+
+### CLEAR ARTISTS
+DELETE {{url}}/artists
