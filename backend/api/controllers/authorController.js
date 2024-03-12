@@ -1,6 +1,10 @@
 import express from 'express'
 import { Author } from './../schemas/authorSchema.js'
-import { handleError, handleResponse } from '../../utils/handler.js'
+import {
+    handleError,
+    handleResponse,
+    handleGetAllResponse,
+} from '../../utils/handler.js'
 
 export const getSingleAuthor = async (req, res) => {
     try {
@@ -14,7 +18,7 @@ export const getSingleAuthor = async (req, res) => {
 export const getAllAuthors = async (req, res) => {
     try {
         const author = await Author.find()
-        res.status(200).json(author)
+        handleGetAllResponse(res, author)
     } catch (e) {
         handleError(res, e)
     }
