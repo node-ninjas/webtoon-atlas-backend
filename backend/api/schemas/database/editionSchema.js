@@ -5,6 +5,7 @@ import { artistSchema } from './artistSchema.js'
 import { publisherSchema } from './publisherSchema.js'
 import { titleSchema } from './subDocuments/titleSchema.js'
 import { genresSchema } from './subDocuments/genresSchema.js'
+import { priceSchema } from './subDocuments/priceSchema.js'
 
 export const editionSchema = new mongoose.Schema(
     {
@@ -24,23 +25,9 @@ export const editionSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
-        price: {
-            type: String,
-            validate: {
-                validator: function (v) {
-                    const regex = /^\d+,\d{2}€$/
-                    if (regex.test(v)) {
-                        return v
-                    } else {
-                        console.log(
-                            'the value has not the correct format',
-                            'Expected Format: NN.NN€'
-                        )
-                    }
-                },
-            },
-        },
+        price: priceSchema,
     },
+
     {
         collection: 'edition',
 
