@@ -1,5 +1,5 @@
 import express from 'express'
-import { Publisher } from './../schemas/publisherSchema.js'
+import { Publisher } from './../../schemas/database/publisherSchema.js'
 import {
     handleError,
     handleResponse,
