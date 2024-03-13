@@ -1,5 +1,5 @@
 import express from 'express'
-import { Artist } from './../schemas/artistSchema.js'
+import { Artist } from './../../schemas/database/artistSchema.js'
 import {
     handleError,
     handleResponse,
