@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
 import { statusSchema } from './subDocuments/statusSchema.js'
-import { Demographics } from './subDocuments/demographicsSchema.js'
 import { authorSchema } from './authorSchema.js'
 import { artistSchema } from './artistSchema.js'
 import { publisherSchema } from './publisherSchema.js'
 import { titleSchema } from './subDocuments/titleSchema.js'
+import { genresSchema } from './subDocuments/genresSchema.js'
 
 export const editionSchema = new mongoose.Schema(
     {
@@ -19,7 +19,7 @@ export const editionSchema = new mongoose.Schema(
             required: true,
             enum: ['manhwa', 'manhua', 'webtoon'],
         },
-        demographics: { type: Demographics },
+        genres: { ...genresSchema.obj },
     },
     {
         collection: 'edition',
