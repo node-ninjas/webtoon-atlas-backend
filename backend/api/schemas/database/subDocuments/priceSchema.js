@@ -12,7 +12,7 @@ export const priceSchema = new mongoose.Schema({
                 } else {
                     console.log(
                         'the value has not the correct format',
-                        'Expected Format: NN.NN€'
+                        'Expected Format: NN,NN€'
                     )
                 }
             },

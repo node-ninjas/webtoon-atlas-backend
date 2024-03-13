@@ -7,6 +7,7 @@ import { titleSchema } from './subDocuments/titleSchema.js'
 import { genresSchema } from './subDocuments/genresSchema.js'
 import { priceSchema } from './subDocuments/priceSchema.js'
 import { sizeSchema } from './subDocuments/sizeSchema.js'
+import { isbnSchema } from './subDocuments/isbnSchema.js'
 
 export const editionSchema = new mongoose.Schema(
     {
@@ -26,18 +27,31 @@ export const editionSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
-        price: { priceSchema },
+        price: priceSchema,
         pages: {
             type: Number,
             required: true,
             max: 100,
         },
         size: sizeSchema,
+        isbn: isbnSchema,
+        translator: {
+            type: String,
+        },
+        description: {
+            type: String,
+            required: true,
+            maxLength: 80,
+        },
+        ageRecommendation: {
+            type: Number,
+            min: 0,
+            max: 20,
+        },
     },
 
     {
         collection: 'edition',
-
         timestamps: true,
     }
 )
