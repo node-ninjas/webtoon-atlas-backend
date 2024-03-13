@@ -2,7 +2,11 @@ import mongoose from 'mongoose'
 
 export const statusSchema = new mongoose.Schema({
     status: {
-        type: [String],
+        type: String,
+        required: true,
+    },
+    originalStatus: {
+        type: String,
         required: true,
     },
     type: {
