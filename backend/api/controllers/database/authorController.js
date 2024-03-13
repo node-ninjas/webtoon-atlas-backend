@@ -4,7 +4,7 @@ import {
     handleError,
     handleResponse,
     handleGetAllResponse,
-} from '../../utils/handler.js'
+} from '../../../utils/handler.js'
 
 export const getSingleAuthor = async (req, res) => {
     try {

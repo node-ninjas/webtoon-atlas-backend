@@ -4,7 +4,7 @@ import {
     handleError,
     handleResponse,
     handleGetAllResponse,
-} from '../../utils/handler.js'
+} from '../../../utils/handler.js'
 
 export const getSinglePublisher = async (req, res) => {
     try {
