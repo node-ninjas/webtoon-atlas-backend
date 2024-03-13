@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import { authorRouter } from './backend/api/routers/authorRouter.js'
 import { artistRouter } from './backend/api/routers/artistRouter.js'
+import { publisherRouter } from './backend/api/routers/publisherRouter.js'
 
 dotenv.config()
 
@@ -15,6 +16,7 @@ app.use(express.json())
 app.use(cors())
 app.use('/authors', authorRouter)
 app.use('/artists', artistRouter)
+app.use('/publishers', publisherRouter)
 
 const dbURL = process.env.DB_URL
 
