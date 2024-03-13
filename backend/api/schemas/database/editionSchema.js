@@ -6,13 +6,14 @@ import { publisherSchema } from './publisherSchema.js'
 import { titleSchema } from './subDocuments/titleSchema.js'
 import { genresSchema } from './subDocuments/genresSchema.js'
 import { priceSchema } from './subDocuments/priceSchema.js'
+import { sizeSchema } from './subDocuments/sizeSchema.js'
 
 export const editionSchema = new mongoose.Schema(
     {
         title: titleSchema,
-        authors: [{ ...authorSchema.obj }],
-        artists: [{ ...artistSchema.obj }],
-        publisher: { ...publisherSchema.obj },
+        authors: [{ authorSchema }],
+        artists: [{ artistSchema }],
+        publisher: { publisherSchema },
         status: { type: { ...statusSchema.obj }, required: true },
         chapters: { type: Number, required: true, max: 1000 },
         type: {
@@ -25,7 +26,13 @@ export const editionSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
-        price: priceSchema,
+        price: { priceSchema },
+        pages: {
+            type: Number,
+            required: true,
+            max: 100,
+        },
+        size: sizeSchema,
     },
 
     {
