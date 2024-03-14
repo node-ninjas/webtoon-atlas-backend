@@ -16,24 +16,28 @@ const webtoonSchema = new mongoose.Schema(
         artists: [artistSchema],
         publisher: [publisherSchema],
         status: statusSchema,
-        chapters: { type: Number, required: true, max: 1000 },
+        chapters: {
+            type: Number,
+            required: true,
+            max: 1000,
+        },
         type: {
             type: String,
             required: true,
             enum: ['manhwa', 'manhua', 'webtoon'],
         },
-        genres: [{ ...genresSchema.obj }],
+        genres: [genresSchema],
         volume: {
             type: Number,
             required: true,
         },
-        price: { ...priceSchema.obj },
+        price: priceSchema,
         pages: {
             type: Number,
             required: true,
         },
         size: sizeSchema,
-        isbn: { ...isbnSchema.obj },
+        isbn: isbnSchema,
         translator: String,
         description: {
             type: String,
