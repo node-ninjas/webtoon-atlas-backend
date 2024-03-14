@@ -8,7 +8,7 @@ const genresSchema = {
             return genres.includes(v)
         },
         message: (props) => {
-            'Error: No valid genre', 'Please choose something else, e.g Shounen'
+            return `${props.value} is not a valid genre. REASON: ${props.reason}`
         },
     },
 }
