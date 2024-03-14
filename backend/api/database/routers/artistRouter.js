@@ -6,7 +6,7 @@ import {
     updateSingleArtist,
     deleteSingleArtist,
     deleteAllArtists,
-} from '../../controllers/database/artistController.js'
+} from '../controllers/artistController.js'
 
 export const artistRouter = express.Router()
 

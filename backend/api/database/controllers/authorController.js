@@ -1,5 +1,5 @@
 import express from 'express'
-import { Author } from './../../schemas/database/authorSchema.js'
+import { Author } from '../schemas/authorSchema.js'
 import {
     handleError,
     handleResponse,
