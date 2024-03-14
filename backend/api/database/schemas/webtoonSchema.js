@@ -16,7 +16,11 @@ const webtoonSchema = new mongoose.Schema(
         artists: [artistSchema],
         publisher: [publisherSchema],
         status: statusSchema,
-        chapters: { type: Number, required: true, max: 1000 },
+        chapters: {
+            type: Number,
+            required: true,
+            max: 1000,
+        },
         type: {
             type: String,
             required: true,
@@ -33,7 +37,7 @@ const webtoonSchema = new mongoose.Schema(
             required: true,
         },
         size: sizeSchema,
-        isbn: { ...isbnSchema.obj },
+        isbn: isbnSchema,
         translator: String,
         description: {
             type: String,
