@@ -31,7 +31,6 @@ export const editionSchema = new mongoose.Schema(
         pages: {
             type: Number,
             required: true,
-            max: 100,
         },
         size: sizeSchema,
         isbn: isbnSchema,
