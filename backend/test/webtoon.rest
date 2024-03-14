@@ -20,6 +20,7 @@ Content-Type: application/json
     "publisher": [ { "name": "KakaoToon", "location": "Korea", "description": "A Korean publisher", "type": "originalPublisher" }, { "name": "Animus Verlag", "location": "Germany", "description": "A German publisher", "type": "publisher" }],
     "status": { "abroadStatus": "running", "originalStatus": "finished" },
     "chapters": 100,
+    "genres": ["Shounen", "Action"],
     "type": "webtoon",
     "volume": 1,
     "price": { "value": "14,00", "currency": "€" },
