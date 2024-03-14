@@ -1,17 +1,24 @@
 import mongoose from 'mongoose'
 
+const dimensionSchema = {
+    type: String,
+    required: true,
+    validate: {
+        validator: function (v) {
+            const statusTypes = [
+                'finished',
+                'running',
+                'onHiatus',
+                'aborted',
+                'announced',
+            ]
+            return statusTypes.includes(v)
+        },
+        message: (props) => `${props.value} is not a valid status!`,
+    },
+}
+
 export const statusSchema = new mongoose.Schema({
-    status: {
-        type: String,
-        required: true,
-    },
-    originalStatus: {
-        type: String,
-        required: true,
-    },
-    type: {
-        type: String,
-        required: true,
-        enum: ['complete', 'running', 'onHiatus', 'aborted', 'announced'],
-    },
+    abroadStatus: dimensionSchema,
+    originalStatus: dimensionSchema,
 })

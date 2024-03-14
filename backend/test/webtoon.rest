@@ -1,0 +1,48 @@
+@url = http://localhost:3550
+
+### GET ALL WEBTOON
+GET {{url}}/webtoons
+
+
+
+### GET SINGLE WEBTOON
+GET {{url}}/webtoons/65f2f9ba57ff9b9ff95ecc93
+
+
+### ADD SINGLE WEBTOON
+POST {{url}}/webtoons
+Content-Type: application/json
+
+{
+    "title": [{ "name": "Final Fighters", "language": "English" }, { "name": "Die letzten Kaempfer", "language": "German"}],
+    "authors": [{ "name": "Han Sa-Heok", "location": "Korea" }],
+    "artists": [{ "name": "Artist One", "location": "Korea" }],
+    "publisher": [ { "name": "KakaoToon", "location": "Korea", "description": "A Korean publisher", "type": "originalPublisher" }, { "name": "Animus Verlag", "location": "Germany", "description": "A German publisher", "type": "publisher" }],
+    "status": { "abroadStatus": "running", "originalStatus": "finished" },
+    "chapters": 100,
+    "type": "webtoon",
+    "volume": 1,
+    "price": { "price": "14,00€" },
+    "pages": 200,
+    "size": { "length": 10 , "width": 3, "height": 20 },
+    "isbn": "1234567890123" ,
+    "translator": "Janine Fischer",
+    "description": "This is a sample description for the webtoon.",
+    "ageRecommendation": 12
+}
+
+### UPDATE SINGLE WEBTOON
+PATCH {{url}}/webtoons/65f034fd442fcd59fce48b8e
+Content-Type: application/json
+
+{
+    "name": "Hasan AlSaid",
+    "city": "Berlin",
+    "description": "He writes queer stories"
+}
+
+### DELETE SINGLE WEBTOON
+DELETE {{url}}/webtoons/65f034fd442fcd59fce48b8e
+
+### CLEAR WEBTOON
+DELETE {{url}}/webtoons

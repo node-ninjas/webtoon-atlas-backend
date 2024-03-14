@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 export const priceSchema = new mongoose.Schema({
-    Price: {
+    price: {
         type: String,
         required: true,
         validate: {

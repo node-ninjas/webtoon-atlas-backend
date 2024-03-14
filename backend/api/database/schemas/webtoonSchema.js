@@ -9,35 +9,32 @@ import { priceSchema } from './subDocuments/priceSchema.js'
 import { sizeSchema } from './subDocuments/sizeSchema.js'
 import { isbnSchema } from './subDocuments/isbnSchema.js'
 
-export const editionSchema = new mongoose.Schema(
+const webtoonSchema = new mongoose.Schema(
     {
-        title: titleSchema,
-        authors: [{ authorSchema }],
-        artists: [{ artistSchema }],
-        publisher: { publisherSchema },
-        status: { type: { ...statusSchema.obj }, required: true },
+        title: [{ ...titleSchema.obj }],
+        authors: [authorSchema],
+        artists: [artistSchema],
+        publisher: [publisherSchema],
+        status: statusSchema,
         chapters: { type: Number, required: true, max: 1000 },
         type: {
             type: String,
             required: true,
             enum: ['manhwa', 'manhua', 'webtoon'],
         },
-        genres: { ...genresSchema.obj },
+        genres: [{ ...genresSchema.obj }],
         volume: {
             type: Number,
             required: true,
         },
-        price: priceSchema,
+        price: { ...priceSchema.obj },
         pages: {
             type: Number,
             required: true,
-            max: 100,
         },
         size: sizeSchema,
-        isbn: isbnSchema,
-        translator: {
-            type: String,
-        },
+        isbn: { ...isbnSchema.obj },
+        translator: String,
         description: {
             type: String,
             required: true,
@@ -49,11 +46,12 @@ export const editionSchema = new mongoose.Schema(
             max: 20,
         },
     },
-
     {
-        collection: 'edition',
+        collection: 'webtoons',
         timestamps: true,
     }
 )
 
-export const Edition = mongoose.model('Edition', editionSchema)
+const Webtoon = mongoose.model('Webtoon', webtoonSchema)
+
+export { webtoonSchema, Webtoon }
