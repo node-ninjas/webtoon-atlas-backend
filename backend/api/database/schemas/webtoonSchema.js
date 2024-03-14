@@ -9,7 +9,7 @@ import { priceSchema } from './subDocuments/priceSchema.js'
 import { sizeSchema } from './subDocuments/sizeSchema.js'
 import { isbnSchema } from './subDocuments/isbnSchema.js'
 
-export const editionSchema = new mongoose.Schema(
+export const webtoonSchema = new mongoose.Schema(
     {
         title: titleSchema,
         authors: [{ authorSchema }],
@@ -55,4 +55,4 @@ export const editionSchema = new mongoose.Schema(
     }
 )
 
-export const Edition = mongoose.model('Edition', editionSchema)
+export const Edition = mongoose.model('Edition', webtoonSchema)
