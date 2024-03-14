@@ -9,20 +9,20 @@ import { priceSchema } from './subDocuments/priceSchema.js'
 import { sizeSchema } from './subDocuments/sizeSchema.js'
 import { isbnSchema } from './subDocuments/isbnSchema.js'
 
-export const webtoonSchema = new mongoose.Schema(
+const webtoonSchema = new mongoose.Schema(
     {
         title: titleSchema,
-        authors: [{ authorSchema }],
-        artists: [{ artistSchema }],
-        publisher: { publisherSchema },
-        status: { type: { ...statusSchema.obj }, required: true },
+        authors: [authorSchema],
+        artists: [artistSchema],
+        publisher: publisherSchema,
+        status: { type: statusSchema, required: true },
         chapters: { type: Number, required: true, max: 1000 },
         type: {
             type: String,
             required: true,
             enum: ['manhwa', 'manhua', 'webtoon'],
         },
-        genres: { ...genresSchema.obj },
+        genres: genresSchema,
         volume: {
             type: Number,
             required: true,
@@ -34,9 +34,7 @@ export const webtoonSchema = new mongoose.Schema(
         },
         size: sizeSchema,
         isbn: isbnSchema,
-        translator: {
-            type: String,
-        },
+        translator: String,
         description: {
             type: String,
             required: true,
@@ -54,4 +52,6 @@ export const webtoonSchema = new mongoose.Schema(
     }
 )
 
-export const Webtoon = mongoose.model('Webtoon', webtoonSchema)
+const Webtoon = mongoose.model('Webtoon', webtoonSchema)
+
+export { webtoonSchema, Webtoon }
