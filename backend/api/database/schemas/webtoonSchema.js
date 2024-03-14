@@ -50,9 +50,9 @@ export const webtoonSchema = new mongoose.Schema(
     },
 
     {
-        collection: 'edition',
+        collection: 'webtoons',
         timestamps: true,
     }
 )
 
-export const Edition = mongoose.model('Edition', webtoonSchema)
+export const Webtoon = mongoose.model('Webtoon', webtoonSchema)
