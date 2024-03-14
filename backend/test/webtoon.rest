@@ -22,7 +22,7 @@ Content-Type: application/json
     "chapters": 100,
     "type": "webtoon",
     "volume": 1,
-    "price": { "price": "14,00€" },
+    "price": { "value": "14,00", "currency": "€" },
     "pages": 200,
     "size": { "length": 10 , "width": 3, "height": 20 },
     "isbn": "1234567890123" ,
