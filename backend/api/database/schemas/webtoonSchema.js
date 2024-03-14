@@ -11,29 +11,29 @@ import { isbnSchema } from './subDocuments/isbnSchema.js'
 
 const webtoonSchema = new mongoose.Schema(
     {
-        title: titleSchema,
+        title: [{ ...titleSchema.obj }],
         authors: [authorSchema],
         artists: [artistSchema],
-        publisher: publisherSchema,
-        status: { type: statusSchema, required: true },
+        publisher: [publisherSchema],
+        status: statusSchema,
         chapters: { type: Number, required: true, max: 1000 },
         type: {
             type: String,
             required: true,
             enum: ['manhwa', 'manhua', 'webtoon'],
         },
-        genres: genresSchema,
+        genres: [{ ...genresSchema.obj }],
         volume: {
             type: Number,
             required: true,
         },
-        price: priceSchema,
+        price: { ...priceSchema.obj },
         pages: {
             type: Number,
             required: true,
         },
         size: sizeSchema,
-        isbn: isbnSchema,
+        isbn: { ...isbnSchema.obj },
         translator: String,
         description: {
             type: String,

@@ -5,7 +5,7 @@ export const publisherSchema = new mongoose.Schema(
     {
         ...personInfoSubdocument.obj,
         type: {
-            type: String,
+            type: [String],
             required: true,
             enum: ['publisher', 'originalPublisher', 'magazinPublisher'],
         },
