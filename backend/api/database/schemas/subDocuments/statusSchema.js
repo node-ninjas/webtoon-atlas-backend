@@ -14,12 +14,7 @@ const dimensionSchema = {
             ]
             return statusTypes.includes(v)
         },
-        message: (props) =>
-            `${
-                props.value
-            } is not a valid status! It can be one of these ${statusTypes.join(
-                ', '
-            )} `,
+        message: (props) => `${props.value} is not a valid status!`,
     },
 }
 
