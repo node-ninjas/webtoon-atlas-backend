@@ -27,7 +27,7 @@ const webtoonSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
-        price: { ...priceSchema.obj },
+        price: priceSchema,
         pages: {
             type: Number,
             required: true,
