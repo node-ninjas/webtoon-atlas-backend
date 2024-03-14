@@ -5,6 +5,7 @@ import cors from 'cors'
 import { authorRouter } from './backend/api/database/routers/authorRouter.js'
 import { artistRouter } from './backend/api/database/routers/artistRouter.js'
 import { publisherRouter } from './backend/api/database/routers/publisherRouter.js'
+import { webtoonRouter } from './backend/api/database/routers/webtoonRouter.js'
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.use(cors())
 app.use('/authors', authorRouter)
 app.use('/artists', artistRouter)
 app.use('/publishers', publisherRouter)
+app.use('/webtoons', webtoonRouter)
 
 const dbURL = process.env.DB_URL
 
