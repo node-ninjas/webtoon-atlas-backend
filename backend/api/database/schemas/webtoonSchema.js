@@ -48,7 +48,6 @@ export const webtoonSchema = new mongoose.Schema(
             max: 20,
         },
     },
-
     {
         collection: 'webtoons',
         timestamps: true,
