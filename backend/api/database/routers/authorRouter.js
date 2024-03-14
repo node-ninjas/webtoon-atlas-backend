@@ -6,7 +6,7 @@ import {
     updateSingleAuthor,
     deleteSingleAuthor,
     deleteAllAuthors,
-} from '../../controllers/database/authorController.js'
+} from '../controllers/authorController.js'
 
 export const authorRouter = express.Router()
 
