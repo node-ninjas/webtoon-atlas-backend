@@ -1,0 +1,36 @@
+@url = http://localhost:3550
+
+### GET ALL GENRES
+GET {{url}}/genres
+
+
+
+### GET SINGLE GENRE
+GET {{url}}/genres/65f034fd442fcd59fce48b8e
+
+
+### ADD SINGLE GENRE
+POST {{url}}/genres
+Content-Type: application/json
+
+{
+    "name": "Hasan AlSaid",
+    "city": "Berlin",
+    "description": "He writes queer stories"
+}
+
+### UPDATE SINGLE GENRE
+PATCH {{url}}/genres/65f034fd442fcd59fce48b8e
+Content-Type: application/json
+
+{
+    "name": "Hasan AlSaid",
+    "city": "Berlin",
+    "description": "He writes queer stories"
+}
+
+### DELETE SINGLE GENRE
+DELETE {{url}}/genres/65f034fd442fcd59fce48b8e
+
+### CLEAR GENRE
+DELETE {{url}}/genres

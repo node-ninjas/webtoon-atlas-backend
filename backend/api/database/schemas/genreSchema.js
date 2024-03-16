@@ -1,14 +1,25 @@
 import mongoose from 'mongoose'
-import { personInfoSubdocument } from './subDocuments/personInfoSubdocument.js'
+import { genres } from './subDocuments/genres.js'
 
-export const artistSchema = new mongoose.Schema(
+export const genreSchema = new mongoose.Schema(
     {
-        ...personInfoSubdocument.obj,
+        type: {
+            type: String,
+            required: true,
+            validate: {
+                validator: function (v) {
+                    return genres.includes(v)
+                },
+                message: (props) => {
+                    return `${props.value} is not a valid genre. REASON: ${props.reason}`
+                },
+            },
+        },
     },
     {
-        collection: 'artists',
+        collection: 'genres',
         timestamps: true,
     }
 )
 
-export const Artist = mongoose.model('Artist', artistSchema)
+export const Genre = mongoose.model('Genre', genreSchema)
