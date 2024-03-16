@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import { statusSchema } from './subDocuments/statusSchema.js'
 import { authorSchema } from './authorSchema.js'
-import { artistSchema } from './artistSchema.js'
+import { artistSchema } from './genreSchema.js'
 import { publisherSchema } from './publisherSchema.js'
 import { titleSchema } from './subDocuments/titleSchema.js'
 import { genresSchema } from './genresSchema.js'
