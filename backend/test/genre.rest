@@ -14,9 +14,7 @@ POST {{url}}/genres
 Content-Type: application/json
 
 {
-    "name": "Hasan AlSaid",
-    "city": "Berlin",
-    "description": "He writes queer stories"
+    "genre": "Shoujo"
 }
 
 ### UPDATE SINGLE GENRE
