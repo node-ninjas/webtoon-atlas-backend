@@ -26,7 +26,7 @@ const webtoonSchema = new mongoose.Schema(
             required: true,
             enum: ['manhwa', 'manhua', 'webtoon'],
         },
-        // genres: [genresSchema],
+        genres: { type: mongoose.SchemaTypes.ObjectId, ref: 'Genre' },
         volume: {
             type: Number,
             required: true,

@@ -8,7 +8,7 @@ import {
 
 export const getSingleWebtoon = async (req, res) => {
     try {
-        const webtoon = await Webtoon.findById(req.params.id)
+        const webtoon = await Webtoon.findById(req.params.id).populate('genres')
         handleResponse(res, req, webtoon)
     } catch (e) {
         handleError(res, e)
@@ -26,7 +26,7 @@ export const getAllWebtoons = async (req, res) => {
 
 export const addSingleWebtoon = async (req, res) => {
     try {
-        const webtoon = await await Webtoon.create(req.body)
+        const webtoon = await Webtoon.create(req.body)
         res.status(201).json(webtoon)
     } catch (e) {
         handleError(res, e)

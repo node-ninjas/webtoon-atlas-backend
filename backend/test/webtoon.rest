@@ -6,7 +6,8 @@ GET {{url}}/webtoons
 
 
 ### GET SINGLE WEBTOON
-GET {{url}}/webtoons/65f2f9ba57ff9b9ff95ecc93
+GET {{url}}/webtoons/65f638a1eb54491d58e007ea
+
 
 
 ### ADD SINGLE WEBTOON
@@ -20,7 +21,6 @@ Content-Type: application/json
     "publisher": [ { "name": "KakaoToon", "location": "Korea", "description": "A Korean publisher", "type": "originalPublisher" }, { "name": "Animus Verlag", "location": "Germany", "description": "A German publisher", "type": "publisher" }],
     "status": { "abroadStatus": "running", "originalStatus": "finished" },
     "chapters": 100,
-    "genres": ["Shounenn", "Action"],
     "type": "webtoon",
     "volume": 1,
     "price": { "value": "14,00", "currency": "€" },
