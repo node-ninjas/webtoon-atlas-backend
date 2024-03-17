@@ -17,6 +17,55 @@ Content-Type: application/json
     "genre": "Shoujo"
 }
 
+### ADD MULTIPLE GENRES
+
+POST {{url}}/genres
+Content-Type: application/json 
+
+
+   [
+    { "genre": "Shoujo" },
+    { "genre": "Shounen" },
+    { "genre": "Josei" },
+    { "genre": "Seinen" },
+    { "genre": "Action" },
+    { "genre": "Adult" },
+    { "genre": "Adventure" },
+    { "genre": "Boys Life" },
+    { "genre": "Boys Love" },
+    { "genre": "Comedy" },
+    { "genre": "Doujinshi" },
+    { "genre": "Drama" },
+    { "genre": "Ecchi" },
+    { "genre": "Fantasy" },
+    { "genre": "Gender Bender" },
+    { "genre": "Harem" },
+    { "genre": "Hentai" },
+    { "genre": "Historiacal" },
+    { "genre": "Horror" },
+    { "genre": "Lolicon" },
+    { "genre": "Martial Arts" },
+    { "genre": "Mature" },
+    { "genre": "Mecha" },
+    { "genre": "Mystery" },
+    { "genre": "Political" },
+    { "genre": "Psychological" },
+    { "genre": "Romance" },
+    { "genre": "School Life" },
+    { "genre": "Sci-fi" },
+    { "genre": "Shotacon" },
+    { "genre": "Slice of Life" },
+    { "genre": "Smut" },
+    { "genre": "Sports" },
+    { "genre": "Supernatural" },
+    { "genre": "Thriller" },
+    { "genre": "Tragedy" },
+    { "genre": "Yaoi" },
+    { "genre": "Yuri" }
+]
+
+
+
 ### UPDATE SINGLE GENRE
 PATCH {{url}}/genres/65f034fd442fcd59fce48b8e
 Content-Type: application/json

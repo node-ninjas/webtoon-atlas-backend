@@ -33,6 +33,15 @@ export const addSingleGenre = async (req, res) => {
     }
 }
 
+export const addMultipleGenres = async (req, res) => {
+    try {
+        const genre = await Genre.insertMany([req.body])
+        handleResponse(res, req, genre)
+    } catch (e) {
+        handleError(res, e)
+    }
+}
+
 export const updateSingleGenre = async (req, res) => {
     try {
         const genre = await Genre.findByIdAndUpdate(req.params.id, req.body, {

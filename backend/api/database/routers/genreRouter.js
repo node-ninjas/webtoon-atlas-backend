@@ -1,6 +1,7 @@
 import express from 'express'
 import {
     addSingleGenre,
+    addMultipleGenres,
     getSingleGenre,
     getAllGenres,
     updateSingleGenre,
@@ -14,6 +15,7 @@ genreRouter
     .route('/')
     .get(getAllGenres)
     .post(addSingleGenre)
+    .post(addMultipleGenres)
     .delete(deleteAllGenres)
 genreRouter
     .route('/:id')
