@@ -1,0 +1,4 @@
+@url = http://localhost:3550
+
+### GET ALL IMAGES
+GET {{url}}/images

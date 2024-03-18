@@ -1,11 +1,11 @@
-import { Image } from '../schemas/imagesSchema'
+import { Image } from '../schemas/imagesSchema.js'
 import contentful from 'contentful'
 
-const publicAccessToken = process.env.CF_PUBLISHED_ACCESS_TOKEN
+// const publicAccessToken = process.env.CF_PUBLISHED_ACCESS_TOKEN
 
 const client = contentful.createClient({
     space: 'fziwjgphbs4j',
-    accessToken: publicAccessToken,
+    accessToken: 'oeI80k-AOzTeos03LHb_Br7qg7IWUUjBCF0vPrAs3x4',
 })
 
 export const fetchDataAndSaveToMongoDB = async () => {
