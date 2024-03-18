@@ -44,7 +44,7 @@ export const updateSingleUser = async (req, res) => {
     }
 }
 
-export const deleteSingleUser = async (req.res) => {
+export const deleteSingleUser = async (req, res) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id)
         handleResponse(res, req, user)
