@@ -1,0 +1,38 @@
+@url = http://localhost:3550
+
+### GET ALL USERS
+GET {{url}}/users
+
+
+
+### GET SINGLE USER
+GET {{url}}/users/
+
+
+### ADD SINGLE USER
+POST {{url}}/users
+Content-Type: application/json
+
+{
+    "userName": "Pusteblume",
+    "email": "pusteblume@mail.de",
+    "hash": "123456",
+    "type": "user",
+    "role": "user",
+    "age": 30,
+}
+
+### UPDATE SINGLE USER
+PATCH {{url}}/users/65f06dd9ede8be930ba172f3
+Content-Type: application/json
+
+{
+    "name": "Alexa Hirschblume",
+    "description": "She writes queer stories"
+}
+
+### DELETE SINGLE USER
+DELETE {{url}}/users/65ef20bfc6e773ea61b1bcce
+
+### CLEAR USERS
+DELETE {{url}}/users

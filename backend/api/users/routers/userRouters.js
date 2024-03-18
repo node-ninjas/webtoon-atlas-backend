@@ -2,7 +2,7 @@ import express from 'express'
 import {
     addSingleUser,
     getSingleUser,
-    getAllUser,
+    getAllUsers,
     updateSingleUser,
     deleteSingleUser,
     deleteAllUsers,
@@ -10,10 +10,9 @@ import {
 
 export const userRouter = express.Router()
 
-userRouter.route('/').get(getAllUser).post(addSingleUser).delete(deleteAllUsers)
+userRouter.route('/').get(getAllUsers).post(addSingleUser).delete(deleteAllUsers)
 
-userRouter
-    .route('/:id')
+userRouter.route('/:id')
     .get(getSingleUser)
     .patch(updateSingleUser)
     .delete(deleteSingleUser)
