@@ -5,6 +5,7 @@ import {
     handleGetAllResponse,
     handleResponse,
 } from '../../../utils/handler.js'
+import * as jwttools from '../../../utils/jwttools.js'
 
 export const addSingleUser = async (req, res) => {
     try {
@@ -68,7 +69,7 @@ export const loginUser = async (req, res) => {
         const user = await User.findOne({ login})
         if (user !== null) {
             const seconds = 10;
-            
+            jwt
         }
     } catch (e) {
       handleError(res, e) 
