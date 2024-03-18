@@ -5,7 +5,10 @@ import {
     handleGetAllResponse,
     handleResponse,
 } from '../../../utils/handler.js'
+import jwt from 'jsonwebtoken'
 import * as jwttools from '../../../utils/jwttools.js'
+import * as config from '../../../utils/config.js'
+import * as tools from '../../../utils/tools.js'
 
 export const addSingleUser = async (req, res) => {
     try {
@@ -69,7 +72,17 @@ export const loginUser = async (req, res) => {
         const user = await User.findOne({ login})
         if (user !== null) {
             const seconds = 10;
-            jwt
+            jwt.sign( {
+                user
+            }, config.sessionSecret(), { expiresIn: seconds + "s"},(
+                err, token 
+            ) => {
+                res.json({
+                    currentUser: tools.getCurrentUserFromUser(user),token
+                })
+            })
+        } else {
+            res.status(404).json("bad login")
         }
     } catch (e) {
       handleError(res, e) 
