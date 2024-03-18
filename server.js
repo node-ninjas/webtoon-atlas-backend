@@ -7,6 +7,7 @@ import { artistRouter } from './backend/api/database/routers/artistRouter.js'
 import { publisherRouter } from './backend/api/database/routers/publisherRouter.js'
 import { webtoonRouter } from './backend/api/database/routers/webtoonRouter.js'
 import { genreRouter } from './backend/api/database/routers/genreRouter.js'
+import { userRouter} from './backend/api/users/routers/userRouters.js'
 
 dotenv.config()
 
@@ -21,6 +22,8 @@ app.use('/artists', artistRouter)
 app.use('/publishers', publisherRouter)
 app.use('/webtoons', webtoonRouter)
 app.use('/genres', genreRouter)
+
+app.use('/users', userRouter)
 
 const dbURL = process.env.DB_URL
 
