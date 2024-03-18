@@ -1,9 +1,8 @@
 import mongoose from 'mongoose'
 
 const imageSchema = new mongoose.Schema({
-    URL: {
-        type: String,
-    },
+    title: String,
+    body: String,
 })
 
 const Image = mongoose.model('Image', imageSchema)
