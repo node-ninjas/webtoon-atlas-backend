@@ -6,7 +6,8 @@ GET {{url}}/webtoons
 
 
 ### GET SINGLE WEBTOON
-GET {{url}}/webtoons/65f2f9ba57ff9b9ff95ecc93
+GET {{url}}/webtoons/65f7fe40f56d7ae57dabc625
+
 
 
 ### ADD SINGLE WEBTOON
@@ -22,6 +23,7 @@ Content-Type: application/json
     "chapters": 100,
     "genres": ["Shounen", "Action"],
     "type": "webtoon",
+    "genres":  [ "65f6364eedb904202f3cd72e", "65f6364eedb904202f3cd733"   ] ,
     "volume": 1,
     "price": { "value": "14,00", "currency": "€" },
     "pages": 200,

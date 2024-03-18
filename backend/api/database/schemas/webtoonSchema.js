@@ -4,7 +4,7 @@ import { authorSchema } from './authorSchema.js'
 import { artistSchema } from './artistSchema.js'
 import { publisherSchema } from './publisherSchema.js'
 import { titleSchema } from './subDocuments/titleSchema.js'
-import { genresSchema } from './subDocuments/genresSchema.js'
+// import { genresSchema } from './genresSchema.js'
 import { priceSchema } from './subDocuments/priceSchema.js'
 import { sizeSchema } from './subDocuments/sizeSchema.js'
 import { isbnSchema } from './subDocuments/isbnSchema.js'
@@ -26,7 +26,7 @@ const webtoonSchema = new mongoose.Schema(
             required: true,
             enum: ['manhwa', 'manhua', 'webtoon'],
         },
-        genres: [genresSchema],
+        genres: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Genre' }],
         volume: {
             type: Number,
             required: true,
