@@ -17,7 +17,7 @@ export const getSingleWebtoon = async (req, res) => {
 
 export const getAllWebtoons = async (req, res) => {
     try {
-        const webtoon = await Webtoon.find()
+        const webtoon = await Webtoon.find().populate('genres')
         handleGetAllResponse(res, webtoon)
     } catch (e) {
         handleError(res, e)

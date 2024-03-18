@@ -22,6 +22,7 @@ Content-Type: application/json
     "status": { "abroadStatus": "running", "originalStatus": "finished" },
     "chapters": 100,
     "type": "webtoon",
+    "genres":  [ "65f6364eedb904202f3cd72e", "65f6364eedb904202f3cd733"   ] ,
     "volume": 1,
     "price": { "value": "14,00", "currency": "€" },
     "pages": 200,
