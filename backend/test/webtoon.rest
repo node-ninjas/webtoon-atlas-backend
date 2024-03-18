@@ -6,7 +6,7 @@ GET {{url}}/webtoons
 
 
 ### GET SINGLE WEBTOON
-GET {{url}}/webtoons/65f638a1eb54491d58e007ea
+GET {{url}}/webtoons/65f7fe40f56d7ae57dabc625
 
 
 
