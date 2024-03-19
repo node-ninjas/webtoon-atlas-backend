@@ -33,10 +33,9 @@ POST {{url}}/users/login
 Content-Type: application/json
 
 {
-    "userName": "pusteblume",
-    "hash": "23546",
-    "email": "pusteplume@mail.de",
-    "age": 25
+    "userName": "melkkuh",
+    "type": ["admin"],
+    "hash": "23546"
 }
 
 ### DELETE SINGLE USER 

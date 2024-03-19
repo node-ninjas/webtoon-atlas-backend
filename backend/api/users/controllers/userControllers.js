@@ -70,12 +70,12 @@ export const deleteAllUsers = async (req, res) => {
 
 export const loginUser = async (req, res) => {
     try {
-        const { login, passoword } = req.body
-        const user = await User.findByCredentials( login , passoword)
+        const { userName, hash } = req.body
+        const user = await User.findOne({userName, hash})
         if (!user) {
             return res.status(401).json({error: 'Invalid login cred'})
         }
-        const token = jwt.sign({ _id: user._id }, 'secretKey', {expressIn: '1h '})
+        const token = jwt.sign({ _id: user._id }, 'secretKey', {expiresIn: '1800s'})
         res.status(200).json({token})
     } catch (e) {
         handleError(res, e)
