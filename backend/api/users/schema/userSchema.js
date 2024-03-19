@@ -19,6 +19,7 @@ export const userSchema = new mongoose.Schema(
     }
 )
 
+// MIDDLEWARE
 userSchema.pre('save', async function (next) {
     const user = this
     if (user.isModified('hash')) {
@@ -26,16 +27,5 @@ userSchema.pre('save', async function (next) {
     }
     next()
 })
-
-// userSchema.statics.findOne( async function (userName, hash) {
-//     if (!userName){
-//         return null;
-//     }
-//     const isMatch = await bcrypt.compare(hash, userName.hash)
-//     if (!isMatch) {
-//         return null;
-//     }
-//     return userName
-// })
 
 export const User = mongoose.model('User', userSchema)

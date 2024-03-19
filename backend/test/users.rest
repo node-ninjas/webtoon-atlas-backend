@@ -34,7 +34,6 @@ Content-Type: application/json
 
 {
     "userName": "melkkuh",
-    "type": ["admin"],
     "hash": "23546"
 }
 
