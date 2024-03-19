@@ -10,7 +10,6 @@ export const userSchema = new mongoose.Schema(
             required: true,
             enum: ['user', 'admin', 'webtoonDatabase'],
         },
-        role: { type: String, required: true },
         age: { type: Number, required: true },
     },
     {

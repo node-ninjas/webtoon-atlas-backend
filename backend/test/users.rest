@@ -1,0 +1,37 @@
+@url = http://localhost:3550
+
+### GET ALL USERS
+GET {{url}}/users
+
+
+
+### GET SINGLE USER
+GET {{url}}/users/
+
+
+### ADD SINGLE USER
+POST {{url}}/users
+Content-Type: application/json
+
+{
+    "userName": "Hashkekse",
+    "email": "hashkekse@mail.de",
+    "hash": "23546",
+    "type": "webtoonDatabase",
+    "age": 25
+}
+
+### UPDATE SINGLE USER
+PATCH {{url}}/users/65f9116a9274dc8934b5eef9
+Content-Type: application/json
+
+{
+    "age": 28
+}
+
+
+### DELETE SINGLE USER 
+DELETE {{url}}/users/65f9116a9274dc8934b5eef9
+
+### CLEAR USERS
+DELETE {{url}}/users
