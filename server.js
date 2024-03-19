@@ -24,6 +24,7 @@ app.use('/webtoons', webtoonRouter)
 app.use('/genres', genreRouter)
 
 app.use('/users', userRouter)
+app.use('/users/login', userRouter)
 
 const dbURL = process.env.DB_URL
 
