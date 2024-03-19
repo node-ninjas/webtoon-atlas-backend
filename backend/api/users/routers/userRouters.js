@@ -1,5 +1,4 @@
 import express from 'express'
-import * as jwttools from '../../../utils/jwttools.js'
 import {
     addSingleUser,
     getSingleUser,
@@ -10,12 +9,16 @@ import {
     loginUser,
 } from '../controllers/userControllers.js'
 
-
 export const userRouter = express.Router()
 
-userRouter.route('/').get(getAllUsers).post(addSingleUser).delete(deleteAllUsers)
+userRouter
+    .route('/')
+    .get(getAllUsers)
+    .post(addSingleUser)
+    .delete(deleteAllUsers)
 userRouter.route('/login').post(loginUser)
-userRouter.route('/:id')
+userRouter
+    .route('/:id')
     .get(getSingleUser)
     .patch(updateSingleUser)
     .delete(deleteSingleUser)

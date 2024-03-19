@@ -4,7 +4,6 @@
 GET {{url}}/users
 
 
-
 ### GET SINGLE USER
 GET {{url}}/users/
 
@@ -14,10 +13,10 @@ POST {{url}}/users
 Content-Type: application/json
 
 {
-    "userName": "Hashkekse",
-    "email": "hashkekse@mail.de",
+    "userName": "melkkuh",
+    "email": "melkkuh@mail.de",
     "hash": "23546",
-    "type": "webtoonDatabase",
+    "type": "admin",
     "age": 25
 }
 
@@ -29,6 +28,16 @@ Content-Type: application/json
     "age": 28
 }
 
+### LOGIN USER
+POST {{url}}/users/login
+Content-Type: application/json
+
+{
+    "userName": "pusteblume",
+    "hash": "23546",
+    "email": "pusteplume@mail.de",
+    "age": 25
+}
 
 ### DELETE SINGLE USER 
 DELETE {{url}}/users/65f9116a9274dc8934b5eef9

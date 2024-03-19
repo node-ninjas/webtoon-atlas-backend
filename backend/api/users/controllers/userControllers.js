@@ -5,10 +5,8 @@ import {
     handleGetAllResponse,
     handleResponse,
 } from '../../../utils/handler.js'
-import jwt from 'jsonwebtoken'
-import * as jwttools from '../../../utils/jwttools.js'
-import * as config from '../../../utils/config.js'
-import * as tools from '../../../utils/tools.js'
+
+import jwt from 'jsonwebtoken';
 
 export const addSingleUser = async (req, res) => {
     try {
@@ -72,26 +70,13 @@ export const deleteAllUsers = async (req, res) => {
 
 export const loginUser = async (req, res) => {
     try {
-        const { login } = req.body
-        const user = await User.findOne({ login })
-        if (user !== null) {
-            const seconds = 10
-            jwt.sign(
-                {
-                    user,
-                },
-                config.sessionSecret(),
-                { expiresIn: seconds + 's' },
-                (err, token) => {
-                    res.json({
-                        currentUser: tools.getCurrentUserFromUser(user),
-                        token,
-                    })
-                }
-            )
-        } else {
-            res.status(404).json('bad login')
+        const { login, passoword } = req.body
+        const user = await User.findByCredentials( login , passoword)
+        if (!user) {
+            return res.status(401).json({error: 'Invalid login cred'})
         }
+        const token = jwt.sign({ _id: user._id }, 'secretKey', {expressIn: '1h '})
+        res.status(200).json({token})
     } catch (e) {
         handleError(res, e)
     }
