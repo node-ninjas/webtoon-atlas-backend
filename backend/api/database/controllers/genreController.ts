@@ -1,10 +1,10 @@
 import express from 'express'
-import { Genre } from '../schemas/genreSchema.js'
+import { Genre } from '../schemas/genreSchema.ts'
 import {
     handleError,
     handleResponse,
     handleGetAllResponse,
-} from '../../../utils/handler.js'
+} from '../../../utils/handler.ts'
 
 export const getSingleGenre = async (
     req: express.Request,

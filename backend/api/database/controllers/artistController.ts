@@ -1,10 +1,10 @@
 import express from 'express'
-import { Artist } from '../schemas/artistSchema.js'
+import { Artist } from '../schemas/artistSchema.ts'
 import {
     handleError,
     handleResponse,
     handleGetAllResponse,
-} from '../../../utils/handler.js'
+} from '../../../utils/handler.ts'
 
 export const getSingleArtist = async (
     req: express.Request,

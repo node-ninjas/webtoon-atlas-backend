@@ -6,7 +6,7 @@ import {
     updateSingleWebtoon,
     deleteSingleWebtoon,
     deleteAllWebtoons,
-} from '../controllers/webtoonController.js'
+} from '../controllers/webtoonController.ts'
 
 export const webtoonRouter = express.Router()
 

@@ -1,10 +1,10 @@
 import express from 'express'
-import { Webtoon } from '../schemas/webtoonSchema.js'
+import { Webtoon } from '../schemas/webtoonSchema.ts'
 import {
     handleError,
     handleResponse,
     handleGetAllResponse,
-} from '../../../utils/handler.js'
+} from '../../../utils/handler.ts'
 
 export const getSingleWebtoon = async (
     req: express.Request,

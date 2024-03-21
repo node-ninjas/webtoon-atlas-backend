@@ -1,10 +1,10 @@
 import express from 'express'
-import { Author } from '../schemas/authorSchema.js'
+import { Author } from '../schemas/authorSchema.ts'
 import {
     handleError,
     handleResponse,
     handleGetAllResponse,
-} from '../../../utils/handler.js'
+} from '../../../utils/handler.ts'
 
 export const getSingleAuthor = async (
     req: express.Request,

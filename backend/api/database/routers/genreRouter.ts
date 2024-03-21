@@ -7,7 +7,7 @@ import {
     updateSingleGenre,
     deleteSingleGenre,
     deleteAllGenres,
-} from '../controllers/genreController.js'
+} from '../controllers/genreController.ts'
 
 export const genreRouter = express.Router()
 
