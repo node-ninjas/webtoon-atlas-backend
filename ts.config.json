@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "rootDir": "backend",
+        "strict": true,
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "lib": ["esnext"],
+        "skipLibCheck": true
+    },
+    "include": ["backend/**/*.ts"],
+    "exclude": ["node_modules"]
+}
