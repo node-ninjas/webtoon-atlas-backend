@@ -2,12 +2,12 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import { authorRouter } from './backend/api/database/routers/authorRouter.js'
-import { artistRouter } from './backend/api/database/routers/artistRouter.js'
-import { publisherRouter } from './backend/api/database/routers/publisherRouter.js'
-import { webtoonRouter } from './backend/api/database/routers/webtoonRouter.js'
-import { genreRouter } from './backend/api/database/routers/genreRouter.js'
-import { userRouter } from './backend/api/users/routers/userRouters.js'
+import { authorRouter } from './database/routers/authorRouter.js'
+import { artistRouter } from './database/routers/artistRouter.js'
+import { publisherRouter } from './database/routers/publisherRouter.js'
+import { webtoonRouter } from './database/routers/webtoonRouter.js'
+import { genreRouter } from './database/routers/genreRouter.js'
+import { userRouter } from './users/routers/userRouters.js'
 
 dotenv.config()
 
