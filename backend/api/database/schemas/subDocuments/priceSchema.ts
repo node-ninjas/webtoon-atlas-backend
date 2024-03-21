@@ -5,7 +5,7 @@ export const priceSchema = new mongoose.Schema({
         type: String,
         required: true,
         validate: {
-            validator: function (v) {
+            validator: function (v: any) {
                 const regex = /^\d+,\d{2}$/
                 if (regex.test(v)) {
                     return v
@@ -22,7 +22,7 @@ export const priceSchema = new mongoose.Schema({
         type: String,
         required: true,
         validate: {
-            validator: function (v) {
+            validator: function (v: any) {
                 const currencyTypes = ['€', '$', '₩']
                 return currencyTypes.includes(v)
             },

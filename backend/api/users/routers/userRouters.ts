@@ -7,7 +7,7 @@ import {
     deleteSingleUser,
     deleteAllUsers,
     loginUser,
-} from '../controllers/userControllers.js'
+} from '../controllers/userControllers.ts'
 
 export const userRouter = express.Router()
 

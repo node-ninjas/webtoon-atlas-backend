@@ -4,7 +4,7 @@ const dimensionSchema = {
     type: String,
     required: true,
     validate: {
-        validator: function (v) {
+        validator: function (v: any) {
             const statusTypes = [
                 'finished',
                 'running',
@@ -14,7 +14,7 @@ const dimensionSchema = {
             ]
             return statusTypes.includes(v)
         },
-        message: (props) => `${props.value} is not a valid status!`,
+        message: (props: any) => `${props.value} is not a valid status!`,
     },
 }
 

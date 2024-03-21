@@ -1,5 +1,5 @@
-import express from 'express'
-import { User } from '../schema/userSchema.js'
+import { Request, Response} from 'express'
+import { User } from '../schemas/userSchema.ts'
 import {
     handleError,
     handleGetAllResponse,
@@ -8,7 +8,7 @@ import {
 
 import jwt from 'jsonwebtoken';
 
-export const addSingleUser = async (req, res) => {
+export const addSingleUser = async (req: Request , res: Response) => {
     try {
         const user = await User.create(req.body)
         handleResponse(res, req, user)
@@ -17,7 +17,7 @@ export const addSingleUser = async (req, res) => {
     }
 }
 
-export const getSingleUser = async (req, res) => {
+export const getSingleUser = async (req: Request, res: Response) => {
     try {
         const user = await User.findById(req.params.id)
         user
@@ -28,7 +28,7 @@ export const getSingleUser = async (req, res) => {
     }
 }
 
-export const getAllUsers = async (req, res) => {
+export const getAllUsers = async (req: Request, res: Response) => {
     try {
         const user = await User.find()
         res.status(200).json(user)
@@ -37,7 +37,7 @@ export const getAllUsers = async (req, res) => {
     }
 }
 
-export const updateSingleUser = async (req, res) => {
+export const updateSingleUser = async (req: Request, res: Response) => {
     try {
         const user = await User.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
@@ -50,7 +50,7 @@ export const updateSingleUser = async (req, res) => {
     }
 }
 
-export const deleteSingleUser = async (req, res) => {
+export const deleteSingleUser = async (req: Request, res: Response) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id)
         handleResponse(res, req, user)
@@ -59,7 +59,7 @@ export const deleteSingleUser = async (req, res) => {
     }
 }
 
-export const deleteAllUsers = async (req, res) => {
+export const deleteAllUsers = async (req: Request, res: Response) => {
     try {
         const user = await User.deleteMany()
         res.status(201).json(user)
@@ -68,7 +68,7 @@ export const deleteAllUsers = async (req, res) => {
     }
 }
 
-export const loginUser = async (req, res) => {
+export const loginUser = async (req: Request, res: Response) => {
     try {
         const { userName, hash } = req.body
         const user = await User.findOne({userName, hash})

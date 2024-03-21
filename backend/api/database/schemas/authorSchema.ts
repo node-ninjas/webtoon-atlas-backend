@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { personInfoSubdocument } from './subDocuments/personInfoSubdocument.js'
+import { personInfoSubdocument } from './subDocuments/personInfo.ts'
 
 export const authorSchema = new mongoose.Schema(
     {
@@ -11,4 +11,4 @@ export const authorSchema = new mongoose.Schema(
     }
 )
 
-export const Author = new mongoose.model('Author', authorSchema)
+export const Author = mongoose.model('Author', authorSchema)
