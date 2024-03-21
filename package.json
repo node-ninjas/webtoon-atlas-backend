@@ -2,7 +2,7 @@
     "name": "webtoon-atlas-backend",
     "version": "1.0.0",
     "description": "",
-    "main": "server.js",
+    "main": "server.ts",
     "type": "module",
     "scripts": {
         "server": "nodemon server.js",
@@ -15,7 +15,7 @@
             "backend"
         ],
         "ext": "ts, json",
-        "exec": "tsx backend/api/index.ts"
+        "exec": "tsx server.ts"
     },
     "author": "loulevin & Yokosumi",
     "license": "ISC",
