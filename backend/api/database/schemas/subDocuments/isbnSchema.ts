@@ -2,10 +2,10 @@ const isbnSchema = {
     type: String,
     required: true,
     validate: {
-        validator: function (v) {
+        validator: function (v: any) {
             return /^\d{13}$/.test(v)
         },
-        message: (props) =>
+        message: (props: any) =>
             `${props.value} is not a valid ISBN! It should exactly 13 digits`,
     },
 }

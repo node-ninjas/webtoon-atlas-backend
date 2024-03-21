@@ -4,10 +4,10 @@ const dimensionSchema = {
     type: Number,
     required: true,
     validate: {
-        validator: function (v) {
+        validator: function (v: any) {
             return v >= 0
         },
-        message: (props) =>
+        message: (props: any) =>
             `${props.value} is not a valid dimension! It should be a positive number.`,
     },
 }
