@@ -7,7 +7,7 @@ import { artistRouter } from './backend/api/database/routers/artistRouter.js'
 import { publisherRouter } from './backend/api/database/routers/publisherRouter.js'
 import { webtoonRouter } from './backend/api/database/routers/webtoonRouter.js'
 import { genreRouter } from './backend/api/database/routers/genreRouter.js'
-import { userRouter} from './backend/api/users/routers/userRouters.js'
+import { userRouter } from './backend/api/users/routers/userRouters.js'
 
 dotenv.config()
 
@@ -30,9 +30,9 @@ const dbURL = process.env.DB_URL
 
 const connectToDb = async () => {
     try {
-        await mongoose.connect(dbURL)
+        await mongoose.connect(dbURL || '')
         console.log(`Conntected to mongoDB`)
-    } catch (e) {
+    } catch (e: any) {
         console.error(e)
         console.log(`Connection to mongoDB failed`)
     }
@@ -44,7 +44,7 @@ const startServer = async () => {
         app.listen(PORT, () => {
             console.log(`Conntected to server on: ${PORT}`)
         })
-    } catch (e) {
+    } catch (e: any) {
         console.log(`Connection to server on port ${PORT} failed`)
         throw new Error(e.message)
     }
