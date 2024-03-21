@@ -1,13 +1,13 @@
 import mongoose from 'mongoose'
-import { statusSchema } from './subDocuments/statusSchema.js'
-import { authorSchema } from './authorSchema.js'
-import { artistSchema } from './artistSchema.js'
-import { publisherSchema } from './publisherSchema.js'
-import { titleSchema } from './subDocuments/titleSchema.js'
-// import { genresSchema } from './genresSchema.js'
-import { priceSchema } from './subDocuments/priceSchema.js'
-import { sizeSchema } from './subDocuments/sizeSchema.js'
-import { isbnSchema } from './subDocuments/isbnSchema.js'
+import { statusSchema } from './subDocuments/statusSchema.ts'
+import { authorSchema } from './authorSchema.ts'
+import { artistSchema } from './artistSchema.ts'
+import { publisherSchema } from './publisherSchema.ts'
+import { titleSchema } from './subDocuments/titleSchema.ts'
+// import { genresSchema } from './genresSchema.ts'
+import { priceSchema } from './subDocuments/priceSchema.ts'
+import { sizeSchema } from './subDocuments/sizeSchema.ts'
+import { isbnSchema } from './subDocuments/isbnSchema.ts'
 
 const webtoonSchema = new mongoose.Schema(
     {

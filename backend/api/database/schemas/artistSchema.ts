@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { personInfoSubdocument } from './subDocuments/personInfoSubdocument.js'
+import { personInfoSubdocument } from './subDocuments/personInfo.ts'
 
 export const artistSchema = new mongoose.Schema(
     {
