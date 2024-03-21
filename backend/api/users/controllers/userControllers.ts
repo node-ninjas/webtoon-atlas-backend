@@ -1,14 +1,14 @@
-import { Request, Response} from 'express'
+import { Request, Response } from 'express'
 import { User } from '../schemas/userSchema.ts'
 import {
     handleError,
     handleGetAllResponse,
     handleResponse,
-} from '../../../utils/handler.js'
+} from '../../../utils/handler.ts'
 
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken'
 
-export const addSingleUser = async (req: Request , res: Response) => {
+export const addSingleUser = async (req: Request, res: Response) => {
     try {
         const user = await User.create(req.body)
         handleResponse(res, req, user)
@@ -71,12 +71,14 @@ export const deleteAllUsers = async (req: Request, res: Response) => {
 export const loginUser = async (req: Request, res: Response) => {
     try {
         const { userName, hash } = req.body
-        const user = await User.findOne({userName, hash})
+        const user = await User.findOne({ userName, hash })
         if (!user) {
-            return res.status(401).json({error: 'Invalid login cred'})
+            return res.status(401).json({ error: 'Invalid login cred' })
         }
-        const token = jwt.sign({ _id: user._id }, 'secretKey', {expiresIn: '1800s'})
-        res.status(200).json({token})
+        const token = jwt.sign({ _id: user._id }, 'secretKey', {
+            expiresIn: '1800s',
+        })
+        res.status(200).json({ token })
     } catch (e) {
         handleError(res, e)
     }

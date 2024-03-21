@@ -6,7 +6,7 @@ import {
     updateSinglePublisher,
     deleteSinglePublisher,
     deleteAllPublishers,
-} from '../controllers/publisherController.js'
+} from '../controllers/publisherController.ts'
 
 export const publisherRouter = express.Router()
 

@@ -1,10 +1,10 @@
 import express from 'express'
-import { Publisher } from '../schemas/publisherSchema.js'
+import { Publisher } from '../schemas/publisherSchema.ts'
 import {
     handleError,
     handleResponse,
     handleGetAllResponse,
-} from '../../../utils/handler.js'
+} from '../../../utils/handler.ts'
 
 export const getSinglePublisher = async (
     req: express.Request,
