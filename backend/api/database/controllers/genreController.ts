@@ -6,67 +6,88 @@ import {
     handleGetAllResponse,
 } from '../../../utils/handler.js'
 
-export const getSingleGenre = async (req, res) => {
+export const getSingleGenre = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const genre = await Genre.findById(req.params.id)
         handleResponse(res, req, genre)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const getAllGenres = async (req, res) => {
+export const getAllGenres = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const genre = await Genre.find()
         handleGetAllResponse(res, genre)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const addSingleGenre = async (req, res) => {
+export const addSingleGenre = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const genre = await Genre.create(req.body)
         res.status(201).json(genre)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const addMultipleGenres = async (req, res) => {
+export const addMultipleGenres = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const genre = await Genre.insertMany([req.body])
         handleResponse(res, req, genre)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const updateSingleGenre = async (req, res) => {
+export const updateSingleGenre = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const genre = await Genre.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
         })
         handleResponse(res, req, genre)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const deleteSingleGenre = async (req, res) => {
+export const deleteSingleGenre = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const genre = await Genre.findByIdAndDelete(req.params.id)
         handleResponse(res, req, genre)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const deleteAllGenres = async (req, res) => {
+export const deleteAllGenres = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const genre = await Genre.deleteMany()
         res.status(201).json(genre)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
