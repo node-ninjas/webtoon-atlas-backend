@@ -15,7 +15,7 @@ POST {{url}}/webtoons
 Content-Type: application/json
 
 {
-    "title": [{ "name": "Final Fighters", "language": "English" }, { "name": "Die letzten Kaempfer", "language": "German"}],
+    "titles": [{ "name": "Final Fighters", "language": "English" }, { "name": "Die letzten Kaempfer", "language": "German"}],
     "authors": [{ "name": "Han Sa-Heok", "location": "Korea" }],
     "artists": [{ "name": "Artist One", "location": "Korea" }],
     "publisher": [ { "name": "KakaoToon", "location": "Korea", "description": "A Korean publisher", "type": "originalPublisher" }, { "name": "Animus Verlag", "location": "Germany", "description": "A German publisher", "type": "publisher" }],

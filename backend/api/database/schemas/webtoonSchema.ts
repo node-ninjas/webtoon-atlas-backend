@@ -4,14 +4,13 @@ import { authorSchema } from './authorSchema.ts'
 import { artistSchema } from './artistSchema.ts'
 import { publisherSchema } from './publisherSchema.ts'
 import { titleSchema } from './subDocuments/titleSchema.ts'
-// import { genresSchema } from './genresSchema.ts'
 import { priceSchema } from './subDocuments/priceSchema.ts'
 import { sizeSchema } from './subDocuments/sizeSchema.ts'
 import { isbnSchema } from './subDocuments/isbnSchema.ts'
 
 const webtoonSchema = new mongoose.Schema(
     {
-        title: [{ ...titleSchema.obj }],
+        titles: [{ ...titleSchema.obj }],
         authors: [authorSchema],
         artists: [artistSchema],
         publisher: [publisherSchema],
