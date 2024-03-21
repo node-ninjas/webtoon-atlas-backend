@@ -6,34 +6,46 @@ import {
     handleGetAllResponse,
 } from '../../../utils/handler.js'
 
-export const getSinglePublisher = async (req, res) => {
+export const getSinglePublisher = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const publisher = await Publisher.findById(req.params.id)
         handleResponse(res, req, publisher)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const getAllPublishers = async (req, res) => {
+export const getAllPublishers = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const publisher = await Publisher.find()
         handleGetAllResponse(res, publisher)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const addSinglePublisher = async (req, res) => {
+export const addSinglePublisher = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const publisher = await Publisher.create(req.body)
         res.status(201).json(publisher)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const updateSinglePublisher = async (req, res) => {
+export const updateSinglePublisher = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const publisher = await Publisher.findByIdAndUpdate(
             req.params.id,
@@ -43,25 +55,31 @@ export const updateSinglePublisher = async (req, res) => {
             }
         )
         handleResponse(res, req, publisher)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const deleteSinglePublisher = async (req, res) => {
+export const deleteSinglePublisher = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const publisher = await Publisher.findByIdAndDelete(req.params.id)
         handleResponse(res, req, publisher)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
 
-export const deleteAllPublishers = async (req, res) => {
+export const deleteAllPublishers = async (
+    req: express.Request,
+    res: express.Response
+) => {
     try {
         const publisher = await Publisher.deleteMany()
         res.status(201).json(publisher)
-    } catch (e) {
+    } catch (e: any) {
         handleError(res, e)
     }
 }
