@@ -14,9 +14,9 @@ Content-Type: application/json
 
 {
     "userName": "melkuh",
-    "email": "melkkuh@mail.de",
+
     "password": "23546",
-    "accessGroups": ["administrators", "members", "loginUsers"],
+    "accessGroups": ["administrators", "members", "loggedInUsers"],
     "age": 25
 }
 

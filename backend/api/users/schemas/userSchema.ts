@@ -12,7 +12,7 @@ export const userSchema = new mongoose.Schema(
             validate: {
                 validator: function (v: string[]) {
                     const accessGroups = [
-                        'administators',
+                        'administrators',
                         'members',
                         'webtoonDatabaseManagers', // Datenbankpfleger
                         'loggedInUsers',
