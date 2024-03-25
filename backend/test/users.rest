@@ -20,6 +20,15 @@ Content-Type: application/json
     "age": 25
 }
 
+### ADD ANONYMOUS USER
+POST {{url}}/users
+content-type: application/json
+
+{
+    "userName": "anonymous",
+    "hash": "1234"
+}
+
 ### UPDATE SINGLE USER
 PATCH {{url}}/users/65f9116a9274dc8934b5eef9
 Content-Type: application/json
@@ -33,8 +42,8 @@ POST {{url}}/users/login
 Content-Type: application/json
 
 {
-    "userName": "melkkuh",
-    "hash": "23546"
+    "userName": "anonymous",
+    "hash": "1234"
 }
 
 ### DELETE SINGLE USER 
