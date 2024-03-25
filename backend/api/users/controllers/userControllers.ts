@@ -7,7 +7,13 @@ import {
 } from '../../../utils/handler.ts'
 
 import jwt from 'jsonwebtoken'
-import * as tools from "../../../utils/tools.ts"
+import * as tools from '../../../utils/tools.ts'
+import * as jwttools from '../../../utils/jwttools.ts'
+import * as config from '../../../utils/config.ts'
+
+interface CustomRequest extends Request {
+	token: string;
+}
 
 export const addSingleUser = async (req: Request, res: Response) => {
     try {
@@ -85,15 +91,29 @@ export const loginUser = async (req: Request, res: Response) => {
     }
 }
 
-export const getCurrentUser = async (_req: Request, res: Response) => {
+export const getCurrentUser = async (req: Request, res: Response) => {
     try {
-       const _anonymousUser = await User.findOne({userName: "anonymousUser"})
-       const anonymousUser = tools.getCurrentUserFromUser(_anonymousUser)
-       if (!anonymousUser){
-              return res.status(401).json({error: 'Invalid user'})
-       }
-       const token = jwt.sign({ _id: anonymousUser.accessGroups }, 'secretKey')
-       res.status(200).json({token})
+        const _anonymousUser = await User.findOne({ userName: 'anonymousUser' })
+        const anonymousUser = tools.getCurrentUserFromUser(_anonymousUser)
+        jwt.verify(
+			(req as unknown as CustomRequest).token,
+			config.sessionSecret(),
+			(err: any) => {
+				if (err) {
+					res.json({
+						currentUser: anonymousUser,
+					});
+				} else {
+					const data = jwttools.decodeJwt(
+						(req as unknown as CustomRequest).token
+					);
+					const currentUser = tools.getCurrentUserFromUser(data.user);
+					res.json({
+						currentUser,
+					});
+				}
+			}
+		);
     } catch (e) {
         handleError(res, e)
     }

@@ -5,11 +5,22 @@ export const userSchema = new mongoose.Schema(
     {
         userName: { type: String, required: true },
         // email: { type: String, required: true },
-        hash: { type: String, required: true },
-        type: {
+        password: { type: String, required: true },
+        accessGroups: {
             type: [String],
             required: true,
-            enum: ['user', 'admin', 'webtoonDatabase'],
+            validate: {
+                validator: function (v: string[]) {
+                    const accessGroups = [
+                        'administators',
+                        'members',
+                        'webtoonDatabaseManagers', // Datenbankpfleger
+                        'loggedInUsers',
+                        'loggedOutUsers',
+                    ]
+                    return v.every(item => accessGroups.includes(item))
+                },
+            },
         },
         age: { type: Number },
     },
@@ -23,7 +34,7 @@ export const userSchema = new mongoose.Schema(
 userSchema.pre('save', async function (next) {
     const user = this
     if (user.isModified('hash')) {
-        user.hash = await bcrypt.hash(user.hash, 4)
+        user.password = await bcrypt.hash(user.password, 4)
     }
     next()
 })

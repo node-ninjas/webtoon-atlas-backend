@@ -13,10 +13,10 @@ POST {{url}}/users
 Content-Type: application/json
 
 {
-    "userName": "melkkuh",
+    "userName": "melkuh",
     "email": "melkkuh@mail.de",
-    "hash": "23546",
-    "type": "admin",
+    "password": "23546",
+    "accessGroups": ["administrators", "members", "loginUsers"],
     "age": 25
 }
 
@@ -25,25 +25,26 @@ POST {{url}}/users
 content-type: application/json
 
 {
-    "userName": "anonymous",
-    "hash": "1234"
+    "userName": "anonymousUser",
+    "password": "1234",
+    "accessGroups": ["loggedOutUsers"]
 }
 
 ### UPDATE SINGLE USER
-PATCH {{url}}/users/65f9116a9274dc8934b5eef9
+PATCH {{url}}/users/660178b8ae9a190a2fff5ce0
 Content-Type: application/json
 
 {
-    "age": 28
+    "accessGroups": ["adminstrators", "members"]
 }
 
-### LOGIN USER
-POST {{url}}/users/login
+### GET CURRENT USER
+GET {{url}}/users/current
 Content-Type: application/json
 
 {
-    "userName": "anonymous",
-    "hash": "1234"
+    "userName": "anonymousUser",
+    "password": "1234"
 }
 
 ### DELETE SINGLE USER 

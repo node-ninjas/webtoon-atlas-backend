@@ -18,7 +18,7 @@ userRouter
     .get(getAllUsers)
     .post(addSingleUser)
     .delete(deleteAllUsers)
-userRouter.route('/current').get(jwttools.verifyToken, getCurrentUser)
+userRouter.route('/current').get(getCurrentUser)
 userRouter
     .route('/:id')
     .get(getSingleUser)
