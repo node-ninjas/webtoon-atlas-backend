@@ -85,7 +85,7 @@ export const loginUser = async (req: Request, res: Response) => {
     }
 }
 
-export const currentUser = async (_req: Request, res: Response) => {
+export const getCurrentUser = async (_req: Request, res: Response) => {
     try {
        const _anonymousUser = await User.findOne({userName: "anonymousUser"})
        const anonymousUser = tools.getCurrentUserFromUser(_anonymousUser)

@@ -1,4 +1,5 @@
 import express from 'express'
+import * as jwttools from '../../../utils/jwttools.ts'
 import {
     addSingleUser,
     getSingleUser,
@@ -7,6 +8,7 @@ import {
     deleteSingleUser,
     deleteAllUsers,
     loginUser,
+    getCurrentUser,
 } from '../controllers/userControllers.ts'
 
 export const userRouter = express.Router()
@@ -16,9 +18,10 @@ userRouter
     .get(getAllUsers)
     .post(addSingleUser)
     .delete(deleteAllUsers)
-userRouter.route('/login').post(loginUser)
+userRouter.route('/current').get(jwttools.verifyToken, getCurrentUser)
 userRouter
     .route('/:id')
     .get(getSingleUser)
     .patch(updateSingleUser)
     .delete(deleteSingleUser)
+userRouter.route('/login').post(loginUser)
