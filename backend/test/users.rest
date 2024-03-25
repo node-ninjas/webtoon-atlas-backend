@@ -38,6 +38,15 @@ Content-Type: application/json
     "accessGroups": ["adminstrators", "members"]
 }
 
+### GET LOGIN
+POST {{url}}/users/login
+Content-Type: application/json
+
+{
+    "userName": "melkuh",
+    "password": "23546"
+}
+
 ### GET CURRENT USER
 GET {{url}}/users/current
 Content-Type: application/json
@@ -45,6 +54,7 @@ Content-Type: application/json
 {
     "userName": "anonymousUser",
     "password": "1234"
+    
 }
 
 ### DELETE SINGLE USER 

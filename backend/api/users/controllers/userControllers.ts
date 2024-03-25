@@ -85,7 +85,7 @@ export const loginUser = async (req: Request, res: Response) => {
         const token = jwt.sign({ _id: user._id }, 'secretKey', {
             expiresIn: '10s',
         })
-        res.status(200).json({ token })
+        res.status(200).json({message: "You are logged!", token })
     } catch (e) {
         handleError(res, e)
     }
