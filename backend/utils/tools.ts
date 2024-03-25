@@ -22,7 +22,7 @@ export const handleError = (res: Response, error: any) => {
 }
 
 // TODO: Add interface for this function including everything that is in user. e.g interface user { firstName: string, lastName: string etc.}
-export const getCurrentUserFromUser = (user) => {
+export const getCurrentUserFromUser = (user: any) => {
     return {
         fullName: `${user.firstName} ${user.lastName}`,
         accessGroups: user.accessGroups,

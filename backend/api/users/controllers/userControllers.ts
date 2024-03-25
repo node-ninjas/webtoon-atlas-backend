@@ -7,6 +7,7 @@ import {
 } from '../../../utils/handler.ts'
 
 import jwt from 'jsonwebtoken'
+import * as tools from "../../../utils/tools.ts"
 
 export const addSingleUser = async (req: Request, res: Response) => {
     try {
@@ -76,9 +77,23 @@ export const loginUser = async (req: Request, res: Response) => {
             return res.status(401).json({ error: 'Invalid login cred' })
         }
         const token = jwt.sign({ _id: user._id }, 'secretKey', {
-            expiresIn: '1800s',
+            expiresIn: '10s',
         })
         res.status(200).json({ token })
+    } catch (e) {
+        handleError(res, e)
+    }
+}
+
+export const currentUser = async (_req: Request, res: Response) => {
+    try {
+       const _anonymousUser = await User.findOne({userName: "anonymousUser"})
+       const anonymousUser = tools.getCurrentUserFromUser(_anonymousUser)
+       if (!anonymousUser){
+              return res.status(401).json({error: 'Invalid user'})
+       }
+       const token = jwt.sign({ _id: anonymousUser.accessGroups }, 'secretKey')
+       res.status(200).json({token})
     } catch (e) {
         handleError(res, e)
     }
