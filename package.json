@@ -20,8 +20,10 @@
     "author": "loulevin & Yokosumi",
     "license": "ISC",
     "dependencies": {
+        "@google-cloud/local-auth": "^2.1.0",
         "bcrypt": "^5.1.1",
         "dotenv": "^16.4.5",
+        "googleapis": "^105.0.0",
         "jsonwebtoken": "^9.0.2",
         "mongoose": "^8.2.0",
         "nodemon": "^3.1.0"
