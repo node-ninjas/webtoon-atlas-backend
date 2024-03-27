@@ -14,25 +14,31 @@ GET {{url}}/webtoons/65f7fe40f56d7ae57dabc625
 POST {{url}}/webtoons
 Content-Type: application/json
 
-{
-    "titles": [{ "name": "Final Fighters", "language": "English" }, { "name": "Die letzten Kaempfer", "language": "German"}],
-    "authors": [{ "name": "Han Sa-Heok", "location": "Korea" }],
-    "artists": [{ "name": "Artist One", "location": "Korea" }],
-    "publisher": [ { "name": "KakaoToon", "location": "Korea", "description": "A Korean publisher", "type": "originalPublisher" }, { "name": "Animus Verlag", "location": "Germany", "description": "A German publisher", "type": "publisher" }],
-    "status": { "abroadStatus": "running", "originalStatus": "finished" },
-    "chapters": 100,
-    "genres": ["Shounen", "Action"],
-    "type": "webtoon",
-    "genres":  [ "65f6364eedb904202f3cd72e", "65f6364eedb904202f3cd733"   ] ,
-    "volume": 1,
-    "price": { "value": "14,00", "currency": "€" },
-    "pages": 200,
-    "size": { "length": 10 , "width": 3, "height": 20 },
-    "isbn": "1234567890123" ,
-    "translator": "Janine Fischer",
-    "description": "This is a sample description for the webtoon.",
-    "ageRecommendation": 12
-}
+     {
+        "titles": [{ "name": "Last Stand", "language": "English" }],
+        "authors": [{ "name": "Park Min-Ji", "location": "South Korea" }],
+        "artists": [{ "name": "Creative Hands", "location": "South Korea" }],
+        "publisher": [
+            {
+                "name": "Tooniverse",
+                "location": "South Korea",
+                "description": "A leading webtoon platform",
+                "type": "originalPublisher"
+            }
+        ],
+        "status": { "abroadStatus": "running", "originalStatus": "running" },
+        "chapters": 120,
+        "genres": ["65f6364eedb904202f3cd738", "65f6364eedb904202f3cd747"],
+        "type": "webtoon",
+        "volume": 1,
+        "price": { "value": "10,99", "currency": "€" },
+        "pages": 180,
+        "size": { "length": 9, "width": 3.5, "height": 19 },
+        "isbn": "4567890123456",
+        "translator": "Sophie Schmidt",
+        "description": "A gripping love story set in the backdrop of a bustling city.",
+        "ageRecommendation": 16
+    }
 
 ### UPDATE SINGLE WEBTOON
 PATCH {{url}}/webtoons/65f034fd442fcd59fce48b8e
