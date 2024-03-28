@@ -9,7 +9,6 @@ import { webtoonRouter } from './backend/api/database/routers/webtoonRouter.ts'
 import { genreRouter } from './backend/api/database/routers/genreRouter.ts'
 import { userRouter } from './backend/api/users/routers/userRouters.ts'
 
-import googleDrive from './backend/api/googleDrive/googleDrive.ts'
 
 dotenv.config()
 

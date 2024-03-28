@@ -6,13 +6,25 @@ const process = require('process');
 const {authenticate} = require('@google-cloud/local-auth');
 const {google} = require('googleapis');
 
+const credentials = {
+  "installed": {
+    "client_id": "1028413231340-45fbnkv4c5kr5rhks4f53h23michf4d1.apps.googleusercontent.com",
+    "project_id": "webtoon-atlas-cover",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    
+    "redirect_uris": ["http://localhost"]
+  }
+}
+
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
 const TOKEN_PATH = path.join(process.cwd(), 'token.json');
-const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json');
+const CREDENTIALS_PATH = credentials;
 
 /**
  * Reads previously authorized credentials from the save file.
