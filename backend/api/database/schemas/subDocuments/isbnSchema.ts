@@ -1,6 +1,7 @@
 const isbnSchema = {
     type: String,
     required: true,
+    unique: true,
     validate: {
         validator: function (v: any) {
             return /^\d{13}$/.test(v)

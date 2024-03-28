@@ -31,7 +31,7 @@ Content-Type: application/json
         "genres": ["65f6364eedb904202f3cd738", "65f6364eedb904202f3cd747"],
         "type": "webtoon",
         "volume": 1,
-        "price": { "value": "10,99", "currency": "€" },
+        "price": { "value": "10.99", "currency": "€" },
         "pages": 180,
         "size": { "length": 9, "width": 3.5, "height": 19 },
         "isbn": "4567890123456",
